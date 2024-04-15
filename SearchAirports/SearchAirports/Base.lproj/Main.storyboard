@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search City View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchCityViewController" id="BYZ-38-t0r" customClass="SearchCityViewController" customModule="SearchAirports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-hy-ZZY">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="180"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Airports" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAj-gO-oKX">
+                                        <rect key="frame" x="15" y="95" width="360" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="ZuI-rS-UvQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IAj-gO-oKX" secondAttribute="trailing" constant="15" id="FlJ-bv-Y9y"/>
+                                    <constraint firstItem="IAj-gO-oKX" firstAttribute="top" secondItem="1Of-hy-ZZY" secondAttribute="top" constant="95" id="mz0-ag-Y5y"/>
+                                    <constraint firstItem="IAj-gO-oKX" firstAttribute="leading" secondItem="1Of-hy-ZZY" secondAttribute="leading" constant="15" id="tGN-Lz-wjl"/>
+                                    <constraint firstAttribute="height" constant="180" id="vEH-T3-dik"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8j2-4X-4Kv">
+                                <rect key="frame" x="0.0" y="180" width="390" height="630"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Of-hy-ZZY" secondAttribute="trailing" id="02K-2Z-kr3"/>
+                            <constraint firstItem="8j2-4X-4Kv" firstAttribute="top" secondItem="1Of-hy-ZZY" secondAttribute="bottom" id="HZM-ne-pAv"/>
+                            <constraint firstItem="8j2-4X-4Kv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nb5-Hz-oK0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8j2-4X-4Kv" secondAttribute="trailing" id="W8X-ks-eL2"/>
+                            <constraint firstItem="1Of-hy-ZZY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bsu-kr-P3n"/>
+                            <constraint firstItem="1Of-hy-ZZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hv4-VP-mPJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8j2-4X-4Kv" secondAttribute="bottom" id="uEd-QN-m5M"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="roundedView" destination="1Of-hy-ZZY" id="T6u-qZ-RQ6"/>
+                        <outlet property="searchTextField" destination="IAj-gO-oKX" id="x2L-h8-bNx"/>
+                        <outlet property="tableView" destination="8j2-4X-4Kv" id="xlb-6R-z1A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="126.15384615384615" y="3.5545023696682461"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
